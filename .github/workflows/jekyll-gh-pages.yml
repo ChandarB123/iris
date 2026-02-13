@@ -32,7 +32,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: ChandarB123/hermes
-          token: ""
+          token: ${{ secrets.TOKEN_GITHUB }}
           path: hermes
       - name: Setup Python
         uses: actions/setup-python@v5
