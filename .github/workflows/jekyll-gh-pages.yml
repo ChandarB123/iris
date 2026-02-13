@@ -28,10 +28,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Checkout Repo A (core-store)
+        uses: actions/checkout@v4
+        with:
+          repository: ChandarB123/hermes
+          token: ""
+          path: hermes
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Install hermes
+        run: |
+          pip install -e hermes
       - name: Generate data using Python
         run: |
           python main.py
