@@ -4,4 +4,4 @@ from hermes.paths import NEWS
 
 output_path = "_data/items.json"
 with open(output_path, "w") as f:
-    f.write(read_json(NEWS))
+    json.dump(read_json(NEWS), f, indent=2)
