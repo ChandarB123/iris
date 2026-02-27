@@ -18,10 +18,15 @@ title: UI for my github repos
   Buy Price - {{ item.askprice }}
   Yield - {{ item.xirr }} %
   Rating - {{ item.Rating }} ( {{ item.Rating_Agency }} )
-  Risk - {{ item.Seniority }} &nbsp; {{ item.Seniority }} 
+  Risk - {{ item.Seniority }} &nbsp; {{ item.Secure_UnSecure }} 
   Interest Frequency - {{ item.IntrPay_Mode }}
-  Payment Schedule - <br/> (interest payment, date-(year, month, day))
+  Payment Schedule - <br/>
+  <table>
   {% for item1 in item.finalCashArray %}
-  {{item1}} 
+    <tr>
+      <td>{{item1.date}}</td>
+      <td>{{item1.interest}}</td>
+    </tr>
   {% endfor %}
+  </table>
 {% endfor %}
